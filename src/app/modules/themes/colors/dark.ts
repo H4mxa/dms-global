@@ -65,4 +65,6 @@ export const darkColors = {
   darkBlue: '#0084b3',
 
   white: '#FFFFFF',
+
+  dark_gray: '#657786',
 } as const;

@@ -1,4 +1,4 @@
-import {createStyleSheet} from '@themes/index';
+import {createStyleSheet} from '@theme';
 
 export const styleSheet = createStyleSheet(theme => {
   return {

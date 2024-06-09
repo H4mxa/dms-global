@@ -1,6 +1,6 @@
 import {delay, put, takeEvery} from 'redux-saga/effects';
 import {loginActions} from '.';
-import {loadString, removeAll, saveString} from '@helper/storage-handlers';
+import {loadString, saveString} from '@helper/storage-handlers';
 import {MMKV_KEY} from '@common/constant';
 import {BEARER_TOKEN} from '@config';
 import {FormLoginType} from '@model/authentication';
@@ -35,7 +35,6 @@ function* watchLoginProcess(_action: {payload: FormLoginType}) {
 
 function* watchSetTokenProcess() {
   try {
-    removeAll();
     const token = loadString(MMKV_KEY.APP_TOKEN);
 
     if (token && typeof token === 'string') {

@@ -16,7 +16,7 @@ import {
 } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-import {sharedTiming, sharePause} from '@animated';
+import {sharedTiming, sharePause} from '@common/animated';
 // import {VectorIconIcon} from '@assets/vector-icon/vector-icon';
 import {AnimatedView, Text} from '@rn-core';
 

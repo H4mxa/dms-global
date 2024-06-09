@@ -1,0 +1,29 @@
+export interface ITweets {
+  isFetching: boolean;
+  tweets: IFeed[] | null;
+  totalPages: number | null;
+  totalPosts: number | null;
+}
+
+export interface ITimeline {
+  data: IFeed[];
+  totalPages: number;
+  totalPosts: number;
+}
+
+export interface IFeed {
+  id: string;
+  created_at: string;
+  text: string;
+  user: User;
+  likes_count: number;
+  replies_count: number;
+}
+
+export interface User {
+  id: string;
+  first_name: string;
+  last_name: string;
+  profile_image_url: string;
+  company_name: string;
+}

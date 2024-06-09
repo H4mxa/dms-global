@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {FormLoginProps} from '../type';
-import {useStyles} from '@themes/index';
+import {useStyles} from '@theme';
 import {styleSheet} from '../styles';
 
 export const FormLogin: React.FC<FormLoginProps> = ({isLoading, onSubmit}) => {
