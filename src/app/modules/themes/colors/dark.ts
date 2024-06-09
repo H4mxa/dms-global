@@ -61,4 +61,8 @@ export const darkColors = {
   neutral400: '#A4A2B4',
   neutral500: '#E0DEEA',
   neutral: '#EAE9F2',
+
+  darkBlue: '#0084b3',
+
+  white: '#FFFFFF',
 } as const;

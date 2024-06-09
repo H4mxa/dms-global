@@ -19,6 +19,7 @@ module.exports = {
           '@components': './src/library/components',
           '@redux': './src/redux',
           '@theme': './src/app/modules/themes/index',
+          '@themes': './src/app/modules/themes',
           '@assets': './src/assets',
         },
       },

@@ -7,7 +7,8 @@ import {APP_SCREEN, RootStackParamList} from '@navigation/screen-types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home} from '@screens/authentication/home';
 import {Login} from '@screens/un-authentication/login';
-import {selectAppToken} from '@redux/app/selector';
+import {Register} from '@screens/un-authentication/register';
+import {selectAppToken} from '@redux/login/selector';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -38,6 +39,7 @@ export const RootNavigation = () => {
             freezeOnBlur: true,
           }}>
           <RootStack.Screen name={APP_SCREEN.LOGIN} component={Login} />
+          <RootStack.Screen name={APP_SCREEN.REGISTER} component={Register} />
         </RootStack.Group>
       ) : (
         <RootStack.Group>

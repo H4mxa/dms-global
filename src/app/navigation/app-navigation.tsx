@@ -3,7 +3,6 @@ import {StatusBar} from 'react-native';
 
 import {useSelector} from 'react-redux';
 
-// import {SnackBar} from '@components/snack-bar';
 import {PortalHost} from '@gorhom/portal';
 import {RootNavigation} from '@navigation/root-navigator';
 import {
@@ -48,7 +47,6 @@ export const AppContainer = () => {
           <>
             <RootNavigation />
             <PortalHost name={'AppModal'} />
-            {/* <SnackBar /> */}
           </>
         )}
         <RXStore />

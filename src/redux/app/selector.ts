@@ -8,8 +8,3 @@ export const selectAppConfig = createSelector(
     theme: app.theme,
   }),
 );
-
-export const selectAppToken = createSelector(
-  (state: RootState) => state.app,
-  app => app.token,
-);
