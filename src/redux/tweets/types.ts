@@ -1,5 +1,6 @@
 export interface ITweets {
   isFetching: boolean;
+  likeLoader: boolean;
   tweets: IFeed[] | null;
   totalPages: number | null;
   totalPosts: number | null;

@@ -43,22 +43,28 @@ export const useTweets = () => {
     );
   });
 
-  const handleTweetActions = useEventCallback((eventType: tweetActionTypes) => {
-    switch (eventType) {
-      case 'like':
-        console.log(eventType);
-        break;
-      case 'comment':
-        console.log(eventType);
-        break;
-      case 'retweet':
-        console.log(eventType);
-        break;
-      case 'share':
-        console.log(eventType);
-        break;
-    }
-  });
+  const handleTweetActions = useEventCallback(
+    (eventType: tweetActionTypes, postId: string) => {
+      switch (eventType) {
+        case 'like':
+          dispatch(
+            tweetActions.processLikeTweet({
+              postId,
+            } as any),
+          );
+          break;
+        case 'comment':
+          console.log(eventType);
+          break;
+        case 'retweet':
+          console.log(eventType);
+          break;
+        case 'share':
+          console.log(eventType);
+          break;
+      }
+    },
+  );
 
   const tweetMethods = {
     getLatestTweets,

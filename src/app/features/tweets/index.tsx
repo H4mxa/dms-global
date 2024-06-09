@@ -72,7 +72,7 @@ const TweetsComponent = () => {
             hourMinute={hourMinute}
             tweetText={tweetText}
             onPress={eventType =>
-              execFunc(tweetMethods.handleTweetActions, eventType)
+              execFunc(tweetMethods.handleTweetActions, eventType, item.id)
             }
           />
         );

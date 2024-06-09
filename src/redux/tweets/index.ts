@@ -4,6 +4,7 @@ import {SLICE_NAME} from '@common/constant';
 
 const initialState: ITweets = {
   isFetching: false,
+  likeLoader: false,
   tweets: null,
   totalPages: null,
   totalPosts: null,
@@ -39,6 +40,25 @@ const slice = createSlice({
     },
     processLoadMoreTweetsFailed: state => {
       state.isFetching = false;
+    },
+
+    processLikeTweet: state => {
+      state.likeLoader = true;
+    },
+    processLikeTweetSucess: state => {
+      state.likeLoader = false;
+    },
+    processLikeTweetFailed: state => {
+      state.likeLoader = false;
+    },
+    processUnLikeTweet: state => {
+      state.likeLoader = true;
+    },
+    processUnLikeTweetSucess: state => {
+      state.likeLoader = false;
+    },
+    processUnLikeTweetFailed: state => {
+      state.likeLoader = false;
     },
   },
 });

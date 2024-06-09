@@ -16,4 +16,31 @@ export const TweetsService = {
 
     return request(url, null, options);
   },
+  likeTweet: (postId: number) => {
+    const url = `${BASE_URL}${API_URLS.LIKE_TWEET}`;
+    const token = loadString(MMKV_KEY.APP_TOKEN);
+    const body = {
+      post_id: postId,
+    };
+    const options: any = {
+      method: 'POST',
+      contentType: 'application/json',
+      token,
+    };
+    return request(url, body, options);
+  },
+
+  UnlikeTweet: (postId: number) => {
+    const url = `${BASE_URL}${API_URLS.UNLIKE_TWEET}`;
+    const token = loadString(MMKV_KEY.APP_TOKEN);
+    const body = {
+      post_id: postId,
+    };
+    const options: any = {
+      method: 'POST',
+      contentType: 'application/json',
+      token,
+    };
+    return request(url, body, options);
+  },
 };
