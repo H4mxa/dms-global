@@ -1,5 +1,3 @@
-# React Native GitHub Readme
-
 Welcome to our React Native project! This repository contains the source code for our app. Below are the instructions to set up the project and get started.
 
 ## Setup Instructions
