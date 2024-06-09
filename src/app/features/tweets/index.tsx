@@ -56,6 +56,7 @@ const TweetsComponent = () => {
               fontSize: 16,
               fontWeight: '400',
               fontFamily: 'HelveticaNeue',
+              color: theme.color.text,
             }}>
             {index == 2
               ? item.text + '\n@DMS_GLOBAL' + '   #hello_world'

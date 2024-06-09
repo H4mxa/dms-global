@@ -66,7 +66,7 @@ const TweetsComponent: React.FC<TweetsComponentProps> = ({
   );
 
   return (
-    <View style={[{backgroundColor: '#FFF'}, {paddingBottom: 15}]}>
+    <View style={[{backgroundColor: theme.color.white}, {paddingBottom: 15}]}>
       <View style={{flexDirection: 'row'}}>
         <Avatar size={50} photo={profileImageUrl} />
 
@@ -84,7 +84,14 @@ const TweetsComponent: React.FC<TweetsComponentProps> = ({
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-              <Text style={{fontSize: 16, fontWeight: '500'}}>{firstName}</Text>
+              <Text
+                style={{
+                  fontSize: 16,
+                  fontWeight: '500',
+                  color: theme.color.text,
+                }}>
+                {firstName}
+              </Text>
               <Text style={{paddingLeft: 5, color: theme.color.dark_gray}}>
                 {companyName}
               </Text>

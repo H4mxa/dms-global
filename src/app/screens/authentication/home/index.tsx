@@ -4,14 +4,23 @@ import {View} from '@rn-core';
 import {Screen} from '@components/screen';
 import {Tweets} from '@features/tweets';
 
+import {useStyles} from 'react-native-unistyles';
+import {sizeScale} from '@common/scale';
+
 const HomeComponent = () => {
+  const {theme} = useStyles();
+
   // render
   return (
     <Screen
       bottomInsetColor="transparent"
       excludeEdges={['top', 'bottom']}
-      statusBarStyle="dark-content"
-      style={{paddingVertical: 0, paddingHorizontal: 10}}
+      statusBarStyle={theme.type == 'dark' ? 'light-content' : 'dark-content'}
+      style={{
+        flex: 1,
+        marginTop: sizeScale(8),
+        paddingHorizontal: sizeScale(8),
+      }}
       backgroundColor={'transparent'}>
       <View>
         <Tweets />

@@ -64,6 +64,10 @@ export const lightColors = {
 
   darkBlue: '#0084b3',
 
-  white: '#FFFFFF',
+  white: '#FFF',
   dark_gray: '#657786',
+  translusent: '#00000080',
+  transparent: '#00000000',
+
+  text: '#000',
 } as const;

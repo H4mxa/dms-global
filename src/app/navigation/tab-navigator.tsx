@@ -4,15 +4,21 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {SearchScreen} from '@screens/authentication/Search';
 import {NotificationsScreen} from '@screens/authentication/Notification';
+import {useStyles} from 'react-native-unistyles';
 
 const Tab = createBottomTabNavigator();
 
 export const TabNavigator = () => {
+  const {theme} = useStyles();
+
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: theme.color.white,
+        },
       }}>
       <Tab.Screen
         name="Home1"

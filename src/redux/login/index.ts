@@ -26,6 +26,13 @@ const slice = createSlice({
     processSetAppTokenSuccess: (state, action) => {
       state.token = action.payload;
     },
+    processSetAppTokenFailed: (state, action) => {
+      state.token = action.payload;
+    },
+
+    removeToken: state => {
+      state.token = null;
+    },
   },
 });
 
