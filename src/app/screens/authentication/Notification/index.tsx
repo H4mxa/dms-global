@@ -3,21 +3,22 @@ import isEqual from 'react-fast-compare';
 import {View, Text} from '@rn-core';
 import {Screen} from '@components/screen';
 
-const HomeComponent = () => {
+const NotificationsComponent = () => {
   // render
+
   return (
     <Screen
       bottomInsetColor="transparent"
       scroll
-      excludeEdges={['top', 'bottom']}
+      excludeEdges={['bottom', 'top']}
       statusBarStyle="dark-content"
       style={{paddingVertical: 0, paddingHorizontal: 10}}
       backgroundColor={'transparent'}>
       <View>
-        <Text>Home Screen</Text>
+        <Text>Notifications Screen</Text>
       </View>
     </Screen>
   );
 };
 
-export const HomeScreen = memo(HomeComponent, isEqual);
+export const NotificationsScreen = memo(NotificationsComponent, isEqual);

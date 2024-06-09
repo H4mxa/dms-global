@@ -3,14 +3,9 @@ import React, {useEffect} from 'react';
 import BootSplash from 'react-native-bootsplash';
 import {useSelector} from 'react-redux';
 
-import {APP_SCREEN, RootStackParamList} from '@navigation/screen-types';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Home} from '@screens/authentication/home';
-import {Login} from '@screens/un-authentication/login';
-import {Register} from '@screens/un-authentication/register';
 import {selectAppToken} from '@redux/login/selector';
-
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+import {AuthStackNavigator} from './stack-navigator';
+import {DrawerNavigator} from './drawer-navigator';
 
 export const RootNavigation = () => {
   // state
@@ -26,26 +21,5 @@ export const RootNavigation = () => {
   }, []);
 
   // render
-  return (
-    <RootStack.Navigator
-      screenOptions={{
-        headerShown: false,
-        statusBarTranslucent: true,
-        navigationBarColor: 'transparent',
-      }}>
-      {token === null ? (
-        <RootStack.Group
-          screenOptions={{
-            freezeOnBlur: true,
-          }}>
-          <RootStack.Screen name={APP_SCREEN.LOGIN} component={Login} />
-          <RootStack.Screen name={APP_SCREEN.REGISTER} component={Register} />
-        </RootStack.Group>
-      ) : (
-        <RootStack.Group>
-          <RootStack.Screen name={APP_SCREEN.HOME} component={Home} />
-        </RootStack.Group>
-      )}
-    </RootStack.Navigator>
-  );
+  return <>{token === null ? <AuthStackNavigator /> : <DrawerNavigator />}</>;
 };

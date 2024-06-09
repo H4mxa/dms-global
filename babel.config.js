@@ -21,6 +21,8 @@ module.exports = {
           '@theme': './src/app/modules/themes/index',
           '@themes': './src/app/modules/themes',
           '@assets': './src/assets',
+          '@animated': './src/app/modules/common/animated/index',
+          '@hooks': './src/app/modules/common/hooks/index',
         },
       },
     ],

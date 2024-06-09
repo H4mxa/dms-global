@@ -1,10 +1,11 @@
 import {delay, put, takeEvery} from 'redux-saga/effects';
 import {loginActions} from '.';
-import {loadString, saveString} from '@helper/storage-handlers';
+import {loadString, removeAll, saveString} from '@helper/storage-handlers';
 import {MMKV_KEY} from '@common/constant';
 import {BEARER_TOKEN} from '@config';
 import {FormLoginType} from '@model/authentication';
 import {appActions} from '@redux/app';
+import {showSnack} from '@components/snack-bar';
 
 function* watchLoginProcess(_action: {payload: FormLoginType}) {
   try {
@@ -14,8 +15,17 @@ function* watchLoginProcess(_action: {payload: FormLoginType}) {
 
     if (token && typeof token === 'string') {
       saveString(MMKV_KEY.APP_TOKEN, token);
+
+      showSnack({
+        msg: 'Login Successfully',
+        type: 'success',
+      });
       yield put(loginActions.processLoginAppSuccess(token));
     } else {
+      showSnack({
+        msg: 'Login Failed',
+        type: 'error',
+      });
       yield put(loginActions.ProcessLoginAppFailed());
     }
   } catch (error) {
@@ -25,9 +35,8 @@ function* watchLoginProcess(_action: {payload: FormLoginType}) {
 
 function* watchSetTokenProcess() {
   try {
+    removeAll();
     const token = loadString(MMKV_KEY.APP_TOKEN);
-
-    console.log('token ===============> 22 ', token);
 
     if (token && typeof token === 'string') {
       yield put(loginActions.processSetAppTokenSuccess(token));

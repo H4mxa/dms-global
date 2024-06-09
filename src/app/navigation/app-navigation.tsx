@@ -16,6 +16,7 @@ import {NavigationService} from './navigation-service';
 import {RXStore, dispatch} from '@common/redux';
 import {selectAppConfig} from '@redux/app/selector';
 import {appActions} from '@redux/app';
+import {SnackBar} from '@components/snack-bar';
 
 export const AppContainer = () => {
   // state
@@ -47,6 +48,7 @@ export const AppContainer = () => {
           <>
             <RootNavigation />
             <PortalHost name={'AppModal'} />
+            <SnackBar />
           </>
         )}
         <RXStore />

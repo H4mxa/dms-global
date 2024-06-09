@@ -6,6 +6,7 @@ export enum APP_SCREEN {
   REGISTER = 'REGISTER',
 
   AUTHORIZE = 'AUTHORIZE',
+  TAB = 'TAB',
   HOME = 'HOME',
 }
 
@@ -14,6 +15,7 @@ export type RootStackParamList = {
   [APP_SCREEN.REGISTER]: undefined;
   [APP_SCREEN.UN_AUTHORIZE]: undefined;
   [APP_SCREEN.AUTHORIZE]: undefined;
+  [APP_SCREEN.TAB]: undefined;
   [APP_SCREEN.HOME]: undefined;
 };
 
